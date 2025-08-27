@@ -32,17 +32,17 @@ function SkillsCard() {
             <CardContent>
                 <CardTitle className="inline-flex items-center gap-2">
                     <FaCode className="text-accent text-3xl" />
-                    <span className="font-bold text-xl font-mono">My Skills</span>
+                    <span className="font-bold text-2xl font-mono">My Skills</span>
                 </CardTitle>
-                <CardDescription className="text-neutral-500 mt-[-0.5rem] text-xs">My favorite tools I am proficient with</CardDescription>
+                <CardDescription className="text-neutral-500 mt-[-0.2rem] text-xs">My favorite tools I am proficient with</CardDescription>
                 <InfiniteCarousel
                     logos={techLogos}
-                    size={45}
+                    size={40}
                 />
                 <InfiniteCarousel
                     isReversed
                     logos={techLogos2}
-                    size={45}
+                    size={40}
                 />
             </CardContent>
         </Card>

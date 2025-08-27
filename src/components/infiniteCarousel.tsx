@@ -64,7 +64,7 @@ const InfiniteScroller: FC<Props> = ({
     }
 
     const list = useMemo(() => (
-        <div className="flex w-fit items-center gap-10">
+        <div className="flex w-fit items-center gap-15">
             {logos.map((src, index) => {
                 const isLast = index === logos.length - 1
                 return (

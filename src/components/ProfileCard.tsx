@@ -5,6 +5,7 @@ import { FaGithub, FaGraduationCap, FaLanguage, FaMapPin } from "react-icons/fa6
 import { Button } from './ui/button';
 import Link from 'next/link';
 import Status from './Status';
+import TextType from './TextType/TextType';
 
 function ProfileCard() {
     return (
@@ -19,13 +20,25 @@ function ProfileCard() {
                             width={130}
                             height={130}
                             className='object-cover rounded-xl'
+                            priority
                         />
                     </div>
 
                     {/*  profile txt */}
                     <div className='flex flex-col justify-between'>
                         <div className='flex flex-col space-y-[-0.4rem]'>
-                            <p className='text-sm font-medium text-accent'>Software Developer</p>
+                            <div className='flex flex-row gap-2'>
+                                <span className='text-sm font-medium font-mono'>I'm a</span>
+                                <TextType
+                                    text={["Software Developer", "Graphic Artist"]}
+                                    typingSpeed={90}
+                                    cursorCharacter="_"
+                                    cursorClassName='font-mono font-black'
+                                    className='text-sm font-bold font-mono'
+                                    textColors={['#00fefe']}
+                                />
+
+                            </div>
                             <h2 className='font-mono text-[2rem] font-semibold'>Joshua Verceles</h2>
                             <p className='font-medium text-[0.8rem]'>BS in <span className='text-accent'>Computer Science</span></p>
                         </div>
@@ -48,7 +61,7 @@ function ProfileCard() {
                             <FaGithub />GitHub
                         </Link>
                     </Button>
-                    <Status status='working' />
+                    <Status status='available' />
                 </div>
             </CardContent>
         </Card >
