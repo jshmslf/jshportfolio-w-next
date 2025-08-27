@@ -16,6 +16,9 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: "jsh-dev",
   description: "jshmslf portfolio made w/ nextjs",
+  icons: {
+    icon: '/src/app/favicon.ico',
+  }
 };
 
 export default function RootLayout({
