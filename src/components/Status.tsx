@@ -9,7 +9,7 @@ interface StatusProps {
     status: StatusType
 }
 
-const statusConfig: Record<StatusType, { text: string; variantType: string; icon: React.ReactNode }> = {
+const statusConfig: Record<StatusType, { text: string; variantType: "status_active" | "status_notActive" | "status_working"; icon: React.ReactNode }> = {
     available: {
         icon: <GoDotFill />,
         text: "Available to Work",
@@ -31,7 +31,7 @@ function Status({ status }: StatusProps) {
     const { text, variantType, icon } = statusConfig[status]
 
     return (
-        <Badge variant={variantType as any} className={`px-3 rounded-full gap-x-2 font-bold`}>
+        <Badge variant={variantType} className={`px-3 rounded-full gap-x-2 font-bold`}>
             {icon}
             {text}
         </Badge>

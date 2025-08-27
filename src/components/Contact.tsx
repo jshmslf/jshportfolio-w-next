@@ -21,7 +21,7 @@ function Contact() {
 
                     {/* Texts */}
 
-                    <h1 className="font-black text-2xl mt-3">Let's Work Together!</h1>
+                    <h1 className="font-black text-2xl mt-3">{"Let's Work Together!"}</h1>
                     <span className="mb-2 text-neutral-500 font-bold mt-[-0.2rem]">Reach me here</span>
 
                     {/* Contacts */}

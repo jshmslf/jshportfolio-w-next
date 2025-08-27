@@ -29,7 +29,7 @@ function ProfileCard() {
                     <div className='flex flex-col justify-between'>
                         <div className='flex flex-col space-y-[-0.4rem]'>
                             <div className='flex flex-row gap-2 flex-wrap'>
-                                <span className='text-sm font-medium font-mono'>I'm a</span>
+                                <span className='text-sm font-medium font-mono'>{"I'm a"}</span>
                                 <TextType
                                     text={["Software Developer", "Graphic Artist"]}
                                     typingSpeed={90}
