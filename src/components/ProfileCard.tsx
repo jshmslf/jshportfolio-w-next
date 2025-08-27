@@ -10,10 +10,11 @@ import TextType from './TextType/TextType';
 function ProfileCard() {
     return (
         <Card>
-            <CardContent className='items-start'>
-                <div className='grid grid-cols-[130px_1fr] gap-6 items-stretch'>
+            <CardContent className='flex flex-col items-start'>
+                {/* img & txt */}
+                <div className='grid grid-cols-1 sm:grid-cols-[130px_1fr] gap-4 sm:gap-6 items-stretch'>
                     {/* profile img */}
-                    <div className='flex items-start'>
+                    <div className='flex justify-center sm:justify-start'>
                         <Image
                             src="/images/me.png"
                             alt=''
@@ -27,7 +28,7 @@ function ProfileCard() {
                     {/*  profile txt */}
                     <div className='flex flex-col justify-between'>
                         <div className='flex flex-col space-y-[-0.4rem]'>
-                            <div className='flex flex-row gap-2'>
+                            <div className='flex flex-row gap-2 flex-wrap'>
                                 <span className='text-sm font-medium font-mono'>I'm a</span>
                                 <TextType
                                     text={["Software Developer", "Graphic Artist"]}
@@ -37,14 +38,13 @@ function ProfileCard() {
                                     className='text-sm font-bold font-mono'
                                     textColors={['#00fefe']}
                                 />
-
                             </div>
-                            <h2 className='font-mono text-[2rem] font-semibold'>Joshua Verceles</h2>
-                            <p className='font-medium text-[0.8rem]'>BS in <span className='text-accent'>Computer Science</span></p>
+                            <h2 className='font-mono text-2xl sm:text-[2rem] font-semibold'>Joshua Verceles</h2>
+                            <p className='font-medium text-xs sm:text-[0.8rem] mt-2 sm:mt-0'>BS in <span className='text-accent'>Computer Science</span></p>
                         </div>
 
                         {/* description */}
-                        <p className='text-[0.72rem]'>Proficient in various programming langauges and focused on building clean, user-friendly interfaces with reliable and efficient code.</p>
+                        <p className='text-[0.72rem] mt-3 sm:mt-0'>Proficient in various programming langauges and focused on building clean, user-friendly interfaces with reliable and efficient code.</p>
                     </div>
                 </div>
 
@@ -55,8 +55,8 @@ function ProfileCard() {
                     <Badge variant={'tags'}><FaGraduationCap className='text-accent' />Recently Graduated</Badge>
                 </div>
 
-                <div className='flex items-center justify-between mb-[-0.5rem]'>
-                    <Button className='w-48 h-7 rounded-full font-semibold' asChild>
+                <div className='flex flex-col sm:flex-row items-center sm:justify-between gap-2 sm:gap-0 mb-[-0.5rem] w-full'>
+                    <Button className='w-full sm:w-48 h-7 rounded-full font-semibold' asChild>
                         <Link href={"http://github.com/jshmslf/"} target='_blank'>
                             <FaGithub />GitHub
                         </Link>

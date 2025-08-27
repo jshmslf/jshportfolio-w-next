@@ -31,18 +31,18 @@ function SkillsCard() {
         <Card>
             <CardContent>
                 <CardTitle className="inline-flex items-center gap-2">
-                    <FaCode className="text-accent text-3xl" />
-                    <span className="font-bold text-2xl font-mono">My Skills</span>
+                    <FaCode className="text-accent text-2xl sm:text-3xl" />
+                    <span className="font-bold text-xl sm:text-2xl font-mono">My Skills</span>
                 </CardTitle>
                 <CardDescription className="text-neutral-500 mt-[-0.2rem] text-xs">My favorite tools I am proficient with</CardDescription>
                 <InfiniteCarousel
                     logos={techLogos}
-                    size={40}
+                    size={30}
                 />
                 <InfiniteCarousel
                     isReversed
                     logos={techLogos2}
-                    size={40}
+                    size={30}
                 />
             </CardContent>
         </Card>

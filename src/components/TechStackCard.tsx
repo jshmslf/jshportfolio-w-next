@@ -58,8 +58,8 @@ function TechStackCard() {
         <Card>
             <CardContent>
                 <CardTitle className='inline-flex items-center gap-2'>
-                    <BsTools className='text-accent text-2xl' />
-                    <span className='font-mono font-bold text-2xl'>My TechStack</span>
+                    <BsTools className='text-accent text-xl sm:text-2xl' />
+                    <span className='font-mono font-bold text-xl sm:text-2xl'>My Tech Stack</span>
                 </CardTitle>
                 <CardDescription className="text-neutral-500 mt-[-0.2rem] text-xs">
                     My favorite tools that I currently use in development
