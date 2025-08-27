@@ -2,6 +2,7 @@ import { Card, CardHeader } from "@/components/ui/card"
 import ProfileCard from "./ProfileCard"
 import ProjectCard from "./ProjectCard"
 import YearsCard from "./YearsCard"
+import SkillsCard from "./SkillsCard"
 
 
 function MainContent() {
@@ -10,10 +11,7 @@ function MainContent() {
             {/* 1st Col */}
             <div className="flex flex-col gap-4">
                 <ProfileCard />
-                <Card>
-                    <CardHeader>
-                    </CardHeader>
-                </Card>
+                <SkillsCard />
             </div>
 
             {/* 2nd Col */}
