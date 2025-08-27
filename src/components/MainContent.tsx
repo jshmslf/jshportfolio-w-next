@@ -1,5 +1,7 @@
 import { Card, CardHeader } from "@/components/ui/card"
 import ProfileCard from "./ProfileCard"
+import ProjectCard from "./ProjectCard"
+import YearsCard from "./YearsCard"
 
 
 function MainContent() {
@@ -23,8 +25,8 @@ function MainContent() {
                 </Card>
 
                 <div className="grid grid-cols-2 gap-4 ">
-                    <Card>Right Mid 1</Card>
-                    <Card>Right Mid 2</Card>
+                    <ProjectCard />
+                    <YearsCard />
                 </div>
 
                 <Card>Right Bottom</Card>
