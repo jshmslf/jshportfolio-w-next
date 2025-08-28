@@ -58,9 +58,9 @@ function EmailForm() {
             <Tooltip>
                 <TooltipTrigger asChild>
                     <DialogTrigger asChild>
-                        <button className="flex-1 flex items-center justify-center border bg-neutral-950 rounded-lg p-2">
+                        <Button className="flex-1 flex items-center justify-center border bg-neutral-950 rounded-lg p-2 cursor-pointer">
                             <MdEmail className="text-accent text-xl" />
-                        </button>
+                        </Button>
                     </DialogTrigger>
                 </TooltipTrigger>
                 <TooltipContent>Email me</TooltipContent>

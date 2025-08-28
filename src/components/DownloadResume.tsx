@@ -35,7 +35,7 @@ export function DownloadResume() {
                     <AlertDialogAction
                         onClick={() => {
                             const link = document.createElement("a")
-                            link.href = "/resume-joshua-verceles.pdf" // ✅ direct to pdf file
+                            link.href = "/resume-joshua-verceles.pdf"
                             link.download = "resume-joshua-verceles.pdf"
                             document.body.appendChild(link)
                             link.click()
