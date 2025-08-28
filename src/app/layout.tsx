@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ParticlesBackground from "@/components/ParticlesBackground";
+import { Toaster } from "sonner";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -33,6 +34,7 @@ export default function RootLayout({
       >
         <ParticlesBackground>
           {children}
+          <Toaster position="top-center" toastOptions={{ className: "bg-neutral-900 text-neutral-200 border border-neutral-700" }} />
         </ParticlesBackground>
       </body>
     </html>

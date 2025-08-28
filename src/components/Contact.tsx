@@ -2,11 +2,12 @@ import { BsLinkedin, BsTelegram } from "react-icons/bs";
 import { Card, CardContent } from "./ui/card"
 import { MdEmail, MdGroups } from "react-icons/md";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import EmailForm from "./EmailForm";
 
 const contacts = [
-    { icon: <BsLinkedin className="text-accent text-xl" />, link: "https://www.linkedin.com/in/jshmslf/", tooltip: "Connect me here" },
-    { icon: <MdEmail className="text-accent text-xl" />, link: "#", tooltip: "Email me here" },
-    { icon: <BsTelegram className="text-accent text-xl" />, link: "https://www.t.me/jshmslf", tooltip: "Contact me here" },
+    { icon: <BsLinkedin className="text-accent text-xl" />, link: "https://www.linkedin.com/in/jshmslf/", tooltip: "Connect me", type: "external" },
+    { icon: <MdEmail className="text-accent text-xl" />, link: "#", type: "email" },
+    { icon: <BsTelegram className="text-accent text-xl" />, link: "https://www.t.me/jshmslf", tooltip: "Contact me", type: "external" },
 ]
 
 function Contact() {
@@ -29,14 +30,18 @@ function Contact() {
                         {contacts.map((contact, id) => (
                             <Tooltip key={id}>
                                 <TooltipTrigger asChild>
-                                    <a
-                                        href={contact.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex-1 flex items-center justify-center border bg-neutral-950 rounded-lg p-2"
-                                    >
-                                        {contact.icon}
-                                    </a>
+                                    {contact.type === "email" ? (
+                                        <EmailForm />
+                                    ) : (
+                                        <a
+                                            href={contact.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex-1 flex items-center justify-center border bg-neutral-950 rounded-lg p-2"
+                                        >
+                                            {contact.icon}
+                                        </a>
+                                    )}
                                 </TooltipTrigger>
                                 <TooltipContent>
                                     {contact.tooltip}
