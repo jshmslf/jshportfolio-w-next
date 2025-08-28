@@ -6,6 +6,8 @@ import { Button } from './ui/button';
 import Link from 'next/link';
 import Status from './Status';
 import TextType from './TextType/TextType';
+import { GoArrowSwitch } from 'react-icons/go';
+import { DownloadResume } from './DownloadResume';
 
 function ProfileCard() {
     return (
@@ -55,13 +57,28 @@ function ProfileCard() {
                     <Badge variant={'tags'}><FaGraduationCap className='text-accent' />Recently Graduated</Badge>
                 </div>
 
-                <div className='flex flex-col sm:flex-row items-center sm:justify-between gap-2 sm:gap-0 mb-[-0.5rem] w-full'>
-                    <Button className='w-full sm:w-48 h-7 rounded-full font-semibold' asChild>
-                        <Link href={"http://github.com/jshmslf/"} target='_blank'>
-                            <FaGithub />GitHub
-                        </Link>
-                    </Button>
-                    <Status status='available' />
+                <div className="flex flex-col w-full space-y-2">
+                    {/* Top row: 3 buttons */}
+                    <div className="flex flex-wrap sm:flex-nowrap items-center sm:justify-between gap-2 w-full">
+
+                        <Button className="flex-1 sm:w-48 h-7 rounded-full font-semibold text-xs" asChild>
+                            <Link href="/art-portfolio">
+                                <GoArrowSwitch /> Art Portfolio
+                            </Link>
+                        </Button>
+
+                        <DownloadResume />
+                        <Button className="flex-1 sm:w-48 h-7 rounded-full font-semibold" asChild>
+                            <Link href="http://github.com/jshmslf/" target="_blank">
+                                <FaGithub /> GitHub
+                            </Link>
+                        </Button>
+                    </div>
+
+                    {/* Bottom-right status */}
+                    <div className="flex justify-center md:justify-end w-full mb-[-0.5rem] md:mb-[-0.5rem]">
+                        <Status status="available" />
+                    </div>
                 </div>
             </CardContent>
         </Card >

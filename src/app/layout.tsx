@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import { Toaster } from "sonner";
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -32,10 +34,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.className} ${geistMono.variable} antialiased xl:mx-35 mt-4`}
       >
+        <NavBar />
         <ParticlesBackground>
           {children}
           <Toaster position="top-center" toastOptions={{ className: "bg-neutral-900 text-neutral-200 border border-neutral-700" }} />
         </ParticlesBackground>
+        <Footer />
       </body>
     </html>
   );
