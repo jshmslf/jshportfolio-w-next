@@ -1,4 +1,3 @@
-// EmailForm.tsx
 "use client"
 
 import {
@@ -94,9 +93,9 @@ function EmailForm() {
 
                     <DialogFooter className="mt-2">
                         <DialogClose asChild>
-                            <Button variant="outline" className="text-neutral-400">Cancel</Button>
+                            <Button variant="outline" className="bg-neutral-900 text-neutral-400 cursor-pointer">Cancel</Button>
                         </DialogClose>
-                        <Button type="submit" disabled={loading}>{loading ? "Sending..." : "Send"}</Button>
+                        <Button type="submit" disabled={loading} className="cursor-pointer">{loading ? "Sending..." : "Send"}</Button>
                     </DialogFooter>
                 </form>
             </DialogContent>

@@ -20,11 +20,11 @@ const badgeVariants = cva(
         tags:
           "border-transparent bg-foreground text-muted-foreground px-3",
         status_active:
-          "text-green-400 bg-green-300/20 rounded-full px-3 hover:bg-green-300/10",
+          "border-transparent text-green-400 bg-green-300/20 rounded-full px-3 hover:bg-green-300/10",
         status_notActive:
-          "text-gray-400 bg-gray-300/20 rounded-full px-3 hover:bg-gray-300/10",
+          "border-transparent text-gray-400 bg-gray-300/20 rounded-full px-3 hover:bg-gray-300/10",
         status_working:
-          "text-amber-400 bg-amber-300/20 rounded-full px-3 hover:bg-amber-300/10",
+          "border-transparent  text-amber-400 bg-amber-300/20 rounded-full px-3 hover:bg-amber-300/10",
       },
     },
     defaultVariants: {

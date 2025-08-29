@@ -1,38 +1,45 @@
-"use client";
+"use client"
 
 import {
-    AlertDialog,
-    AlertDialogTrigger,
-    AlertDialogContent,
-    AlertDialogHeader,
-    AlertDialogTitle,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogCancel,
-    AlertDialogAction,
-} from "@/components/ui/alert-dialog"
+    Dialog,
+    DialogTrigger,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogDescription,
+    DialogFooter,
+    DialogClose,
+} from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { IoMdDownload } from "react-icons/io"
 
 export function DownloadResume() {
     return (
-        <AlertDialog>
-            <AlertDialogTrigger asChild>
+        <Dialog>
+            <DialogTrigger asChild>
                 <Button className="w-full sm:w-48 h-7 rounded-full font-semibold cursor-pointer">
-                    <IoMdDownload /> myResume
+                    <IoMdDownload /> {"Résumé"}
                 </Button>
-            </AlertDialogTrigger>
+            </DialogTrigger>
 
-            <AlertDialogContent>
-                <AlertDialogHeader>
-                    <AlertDialogTitle>Download Resume?</AlertDialogTitle>
-                    <AlertDialogDescription>
+            <DialogContent className="bg-neutral-950">
+                <DialogHeader>
+                    <DialogTitle className="text-neutral-100">Download Resume?</DialogTitle>
+                    <DialogDescription>
                         Are you sure you want to download my resume?
-                    </AlertDialogDescription>
-                </AlertDialogHeader>
-                <AlertDialogFooter>
-                    <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction
+                    </DialogDescription>
+                </DialogHeader>
+                <DialogFooter className="flex gap-2">
+                    <DialogClose asChild>
+                        <Button
+                            variant="outline"
+                            className="bg-neutral-900 text-neutral-400 cursor-pointer"
+                        >
+                            Cancel
+                        </Button>
+                    </DialogClose>
+                    <Button
+                        className="cursor-pointer"
                         onClick={() => {
                             const link = document.createElement("a")
                             link.href = "/resume-joshua-verceles.pdf"
@@ -43,9 +50,9 @@ export function DownloadResume() {
                         }}
                     >
                         Continue
-                    </AlertDialogAction>
-                </AlertDialogFooter>
-            </AlertDialogContent>
-        </AlertDialog>
+                    </Button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
     )
 }
