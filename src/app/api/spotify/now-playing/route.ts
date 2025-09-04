@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
 
+interface SpotifyArtist {
+    name: string;
+}
+
 const {
     SPOTIFY_CLIENT_ID,
     SPOTIFY_CLIENT_SECRET,
@@ -68,14 +72,14 @@ export async function GET() {
     try {
         const { access_token } = await getAccessToken();
 
-        // 1️⃣ Try currently playing
+        //  Try currently playing
         const nowPlaying = await getNowPlaying(access_token);
         if (nowPlaying && nowPlaying.item) {
             const track = nowPlaying.item;
             return NextResponse.json({
                 is_playing: nowPlaying.is_playing,
                 title: track.name,
-                artist: track.artists.map((a: any) => a.name).join(", "),
+                artist: track.artists.map((a: SpotifyArtist) => a.name).join(", "),
                 album: track.album.name,
                 albumImageUrl: track.album.images?.[0]?.url,
                 url: track.external_urls.spotify,
@@ -83,14 +87,14 @@ export async function GET() {
             });
         }
 
-        // 2️⃣ Fallback: recently played
+        //  Fallback: recently played
         const recentlyPlayed = await getRecentlyPlayed(access_token);
         if (recentlyPlayed?.items?.length > 0) {
             const lastTrack = recentlyPlayed.items[0].track;
             return NextResponse.json({
                 is_playing: false,
                 title: lastTrack.name,
-                artist: lastTrack.artists.map((a: any) => a.name).join(", "),
+                artist: lastTrack.artists.map((a: SpotifyArtist) => a.name).join(", "),
                 album: lastTrack.album.name,
                 albumImageUrl: lastTrack.album.images?.[0]?.url,
                 url: lastTrack.external_urls.spotify,
@@ -98,7 +102,7 @@ export async function GET() {
             });
         }
 
-        // 3️⃣ Nothing found
+        // Nothing found
         return NextResponse.json({
             is_playing: false,
             message: "No recent track found",

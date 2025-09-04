@@ -1,7 +1,6 @@
-// src/app/api/auth/callback/spotify/route.ts
 import { NextResponse } from "next/server";
 
-const SPOTIFY_REDIRECT_URI = "http://127.0.0.1:3000/api/auth/callback/spotify"; // must match your app settings
+const SPOTIFY_REDIRECT_URI = "https://jshdev.vercel.app/api/auth/callback/spotify";
 
 export async function GET(req: Request) {
     try {
@@ -38,15 +37,6 @@ export async function GET(req: Request) {
         }
 
         console.log("Spotify Auth Response:", data);
-        // data contains:
-        // - access_token
-        // - token_type
-        // - scope
-        // - expires_in
-        // - refresh_token
-
-        // TODO: save data.refresh_token somewhere safe (e.g., your database or .env)
-        // You need this refresh_token to call /now-playing later
 
         return NextResponse.json(data);
     } catch (err) {
