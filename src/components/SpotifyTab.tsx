@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "./ui/card";
+import SpotifyCardSkeleton from "./SpotifyCardSkeleton";
 
 interface Track {
     is_playing: boolean;
@@ -33,7 +34,7 @@ export default function SpotifyTab() {
                     setTrack(data);
                     setLastPlayed(data);
                 } else {
-                    // nothing active → fallback to previous known
+                    // nothing active >>> fallback to previous known
                     setTrack(lastPlayed);
                 }
             } catch (err) {
@@ -48,7 +49,7 @@ export default function SpotifyTab() {
     }, []);
 
     if (!track) {
-        return <p className="text-sm text-gray-400">Loading current song… 🎧</p>;
+        return <SpotifyCardSkeleton />;
     }
 
     return (
