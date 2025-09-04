@@ -4,6 +4,7 @@ import YearsCard from "./YearsCard"
 import SkillsCard from "./SkillsCard"
 import TechStackCard from "./TechStackCard"
 import Contact from "./Contact"
+import SpotifyTab from "./SpotifyTab"
 
 
 function MainContent() {
@@ -13,6 +14,7 @@ function MainContent() {
                 {/* 1st Col */}
                 <div className="flex flex-col gap-3 sm:gap-4">
                     <ProfileCard />
+                    <SpotifyTab />
                     <SkillsCard />
                 </div>
 
