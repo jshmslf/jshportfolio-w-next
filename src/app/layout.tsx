@@ -5,6 +5,7 @@ import ParticlesBackground from "@/components/ParticlesBackground";
 import { Toaster } from "sonner";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import { Analytics } from '@vercel/analytics/next';
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -38,6 +39,7 @@ export default function RootLayout({
         <ParticlesBackground>
           {children}
           <Toaster position="top-center" toastOptions={{ className: "bg-neutral-900 text-neutral-200 border border-neutral-700" }} />
+          <Analytics />
         </ParticlesBackground>
         <Footer />
       </body>
