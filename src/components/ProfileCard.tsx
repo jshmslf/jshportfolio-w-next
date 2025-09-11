@@ -51,8 +51,8 @@ function ProfileCard() {
                 </div>
 
                 {/* tags */}
-                <div className='w-full bg-background rounded-md flex flex-wrap items-center p-2 my-3 gap-x-3 gap-y-1'>
-                    <Badge variant={'tags'}><FaMapPin className='text-accent' />Philippines</Badge>
+                <div className='w-full bg-background rounded-md flex flex-wrap items-center p-2 my-3 gap-1'>
+                    <Badge variant={'tags'}><FaMapPin className='text-accent' />Pangasinan, Philippines</Badge>
                     <Badge variant={'tags'}><FaLanguage className='text-accent' />Filipino & English</Badge>
                     <Badge variant={'tags'}><FaGraduationCap className='text-accent' />Recently Graduated</Badge>
                 </div>
@@ -68,6 +68,7 @@ function ProfileCard() {
                         </Button>
 
                         <DownloadResume />
+
                         <Button className="flex-1 sm:w-48 h-7 rounded-full font-semibold" asChild>
                             <Link href="http://github.com/jshmslf/" target="_blank">
                                 <FaGithub /> GitHub

@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "./ui/card";
 import SpotifyCardSkeleton from "./SpotifyCardSkeleton";
+import Image from "next/image";
 
 interface Track {
     is_playing: boolean;
@@ -16,7 +17,7 @@ interface Track {
 
 export default function SpotifyTab() {
     const [track, setTrack] = useState<Track | null>(null);
-    const [lastPlayed, setLastPlayed] = useState<Track | null>(null);
+    const lastPlayedRef = useRef<Track | null>(null);
 
     useEffect(() => {
         const fetchTrack = async () => {
@@ -26,25 +27,21 @@ export default function SpotifyTab() {
 
                 const data: Track = await res.json();
 
-                if (data.is_playing) {
+                if (data.is_playing || data.title) {
                     setTrack(data);
-                    setLastPlayed(data); // store for fallback
-                } else if (data.title) {
-                    // last played item returned
-                    setTrack(data);
-                    setLastPlayed(data);
+                    lastPlayedRef.current = data;
                 } else {
                     // nothing active >>> fallback to previous known
-                    setTrack(lastPlayed);
+                    setTrack(lastPlayedRef.current);
                 }
             } catch (err) {
                 console.error("Error fetching Spotify track:", err);
-                setTrack(lastPlayed); // fallback on error
+                setTrack(lastPlayedRef.current);
             }
         };
 
         fetchTrack();
-        const interval = setInterval(fetchTrack, 15000);
+        const interval = setInterval(fetchTrack, 30000);
         return () => clearInterval(interval);
     }, []);
 
@@ -57,9 +54,9 @@ export default function SpotifyTab() {
             href={track.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block w-auto"
+            className="inline-block w-full max-w-full"
         >
-            <Card className="relative flex flex-row items-center p-3 w-auto max-w-full overflow-hidden shadow-md">
+            <Card className="relative flex flex-row items-center p-3 w-full max-w-full overflow-hidden shadow-md">
                 <CardContent>
                     {/* bg album art */}
                     {track.albumImageUrl && (
@@ -76,8 +73,10 @@ export default function SpotifyTab() {
                     <div className="relative flex flex-row items-center gap-3 z-10 w-full">
                         {/* Small album art */}
                         {track.albumImageUrl && (
-                            <img
+                            <Image
                                 src={track.albumImageUrl}
+                                width={48}
+                                height={48}
                                 alt={track.title ?? "Album Art"}
                                 className="w-12 h-12 rounded-lg shadow-md flex-shrink-0"
                             />

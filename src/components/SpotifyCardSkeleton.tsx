@@ -3,7 +3,7 @@ import { Skeleton } from "./ui/skeleton";
 
 export default function SpotifyCardSkeleton() {
     return (
-        <Card className="relative flex flex-row items-center p-3 w-auto max-w-full overflow-hidden shadow-md">
+        <Card className="relative flex flex-row items-center p-3 w-full max-w-full overflow-hidden shadow-md">
             <CardContent>
                 <div className="absolute inset-0 bg-gray-800/20 rounded-lg" />
 
