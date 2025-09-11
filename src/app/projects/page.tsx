@@ -11,7 +11,7 @@ const projData = [
         title: "W (X Clone App)",
         description: "A modern social media platform inspired by X. It's designed for quick updates and efforless connections. With a minimal interface and a focus on short posts.",
         tags: ["nextjs", "shadcn", "prisma", "clerk", "tailwind", "postgres"],
-        demoLink: "w-social.vercel.app",
+        demoLink: "https://w-social.vercel.app",
         repoLink: "",
     },
     {
