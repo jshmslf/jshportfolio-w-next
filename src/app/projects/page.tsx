@@ -23,13 +23,21 @@ const projData = [
         repoLink: "",
     },
     {
-        image: "/images/proj_img/placeholder.png",
-        title: "Discord Bot",
-        description: "My own discord bot",
+        image: "",
+        title: "Grimore Bot🚧",
+        description: "A Discord bot I created that play music in voice channels. For its next feature, I am currently working on integrating the League of Legends API for the League community in my Discord server.",
         tags: ["python"],
         demoLink: "",
         repoLink: "",
     },
+    {
+        image: "",
+        title: "SariPOS",
+        description: "A point-of-sale system designed for small or 'sari-sari' stores, helping them track inventory, sales, and income conventienly on mobile.",
+        tags: ["React-Native"],
+        demoLink: "",
+        repoLink: "",
+    }
 ]
 
 const breakpointsColumnsObj = {

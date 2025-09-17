@@ -30,7 +30,7 @@ function ProjTileCard({
                         priority={false}
                         fill
                         sizes="(max-width: 768px) 100vw, 400px"
-                        src={image}
+                        src={image && image.trim() !== "" ? image : "/images/proj_img/placeholder.png"}
                         alt={title}
                         className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 group-hover:"
                     />
