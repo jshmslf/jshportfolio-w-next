@@ -17,14 +17,22 @@ function ProfileCard() {
                 <div className='grid grid-cols-1 sm:grid-cols-[130px_1fr] gap-4 sm:gap-6 items-stretch'>
                     {/* profile img */}
                     <div className='flex justify-center sm:justify-start'>
-                        <Image
-                            src="/images/me.png"
-                            alt=''
-                            width={130}
-                            height={130}
-                            className='object-cover rounded-xl'
-                            priority
-                        />
+                        <div className='relative w-[130px] h-[130px] group'>
+                            <Image
+                                src="/images/me.png"
+                                alt=''
+                                fill
+                                className='object-cover rounded-xl transition-opacity duration-200 group-hover:opacity-0'
+                                priority
+                            />
+
+                            <Image
+                                src="/images/yoonchae.jpg"
+                                alt=''
+                                fill
+                                className='object-cover rounded-xl opacity-0 transition-opacity duration-200 group-hover:opacity-100'
+                            />
+                        </div>
                     </div>
 
                     {/*  profile txt */}

@@ -7,7 +7,7 @@ import EmailForm from "./EmailForm";
 const contacts = [
     { icon: <BsLinkedin className="text-accent text-xl" />, link: "https://www.linkedin.com/in/jshmslf/", tooltip: "Connect me", type: "external" },
     { icon: <MdEmail className="text-accent text-xl" />, link: "#", type: "email" },
-    { icon: <BsTelegram className="text-accent text-xl" />, link: "https://www.t.me/jshmslf", tooltip: "Contact me", type: "external" },
+    { icon: <BsTelegram className="text-accent text-xl" />, link: "https://www.t.me/jshmslfdev", tooltip: "Contact me", type: "external" },
 ]
 
 function Contact() {
