@@ -8,6 +8,7 @@ function Footer() {
             >
                 jshmslf
             </a>
+            <p className="text-xs">윤채</p>
         </footer>
     )
 }

@@ -31,7 +31,7 @@ const tools: toolTech[] = [
         name: "Figma",
         version: "",
         logo: <FiFigma className="text-accent" />,
-        link: "https:/figma.com",
+        link: "https://www.figma.com",
     },
     {
         name: "Node.js",

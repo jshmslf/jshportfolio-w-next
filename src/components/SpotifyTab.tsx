@@ -31,7 +31,7 @@ export default function SpotifyTab() {
                     setTrack(data);
                     lastPlayedRef.current = data;
                 } else {
-                    // nothing active >>> fallback to previous known
+                    // nothing active -> fallback to previous 
                     setTrack(lastPlayedRef.current);
                 }
             } catch (err) {

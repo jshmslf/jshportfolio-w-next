@@ -15,7 +15,7 @@ function ProjectCard() {
                     <div className='flex items-center'>
                         <CountUp
                             from={0}
-                            to={3}
+                            to={4}
                             direction='up'
                             className='text-6xl font-black bg-clip-text text-transparent bg-gradient-to-t from-neutral-800 via-neutral-200 to-neutral-50'
                             duration={1}
